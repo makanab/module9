@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-new-student-form',
@@ -11,7 +12,7 @@ export class NewStudentFormComponent implements OnInit {
   @Input() firstName:string;
   @Input() lastName:string;
 
-  constructor() { }
+  constructor(private _myService:StudentService) { }
 
   ngOnInit() {
   
@@ -21,6 +22,7 @@ export class NewStudentFormComponent implements OnInit {
 
   onSubmit(){
     console.log('you submitted:',this.firstName + " "+this.lastName);
+    this._myService.addStudents(this.firstName,this.lastName);
 
   }
 

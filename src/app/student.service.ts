@@ -18,6 +18,15 @@ export class StudentService {
    return this.http.get('http://localhost:8000/students');
  }
 
+ addStudents(firsName:string,lastName:string){
+  return this.http.post('http://localhost:8000/students',{firsName,lastName}).subscribe(
+  responseData=> {
+    console.log(responseData);
+  }
+  )  ;
+
+ }
+
 
 
 }

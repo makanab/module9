@@ -33,7 +33,7 @@ app.get('/students',(req,res,next)=>{
 app.post('/students',(req,res,next)=>{
     const student =  req.body;
     console.log(student.firstName +" "+ student.lastName);
-    res.status(201).send('Posted Successfully');
+    res.status(201).json('Posted Successfully');
 })
 
 
